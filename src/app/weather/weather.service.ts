@@ -34,7 +34,7 @@ export class WeatherService implements IWeatherService {
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     return this.httpClient
       .get<ICurrentWeatherData>(
-        `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?` +
+        ` ${environment.baseUrl}api.openweathermap.org/data/2.5/weather?` +
           `q=${city},${country}&appid=${environment.appId}`
       )
       .pipe(map(data => this.transformToICurrentWeather(data)))
